@@ -1260,6 +1260,9 @@ importers:
       '@plone/types':
         specifier: workspace:*
         version: link:../../core/packages/types
+      query-string:
+        specifier: ^9.3.1
+        version: 9.3.1
       react:
         specifier: 18.2.0
         version: 18.2.0
