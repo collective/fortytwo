@@ -22,9 +22,9 @@ export default function ViewRedirector({
 
   useEffect(() => {
     if (!isNonContentRoute(pathname) && !search.noRedirect) {
-      window.location.href = config.settings.fortytwo.razzleSevenUrl;
+      window.location.href = `${config.settings.fortytwo.razzleSevenUrl}${pathname}${location.search}`;
     }
-  }, [pathname, search.noRedirect]);
+  }, [pathname, search.noRedirect, location.search]);
 
   return null;
 }
