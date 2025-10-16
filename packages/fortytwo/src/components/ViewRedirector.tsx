@@ -1,7 +1,15 @@
-import { Redirect } from 'react-router-dom';
+import { useEffect } from 'react';
 import qs from 'query-string';
-import { isCmsUi } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/registry';
+
+export const isNonContentRoute = (currentPathname: string) => {
+  const { settings } = config;
+  const fullPath = currentPathname.replace(/\?.*$/, '');
+  return settings.nonContentRoutes.reduce(
+    (acc, route) => acc || new RegExp(route).test(fullPath),
+    false,
+  );
+};
 
 export default function ViewRedirector({
   pathname,
@@ -12,13 +20,11 @@ export default function ViewRedirector({
 }) {
   const search = qs.parse(location.search);
 
-  if (!isCmsUi(pathname) && !search.noRedirect) {
-    if (__SERVER__) {
-      return <Redirect to={config.settings.fortytwo.razzleSevenUrl} />;
-    } else {
+  useEffect(() => {
+    if (!isNonContentRoute(pathname) && !search.noRedirect) {
       window.location.href = config.settings.fortytwo.razzleSevenUrl;
     }
-  }
+  }, [pathname, search.noRedirect]);
 
   return null;
 }

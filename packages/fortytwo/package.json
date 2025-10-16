@@ -41,7 +41,6 @@
     "release-it": "^17.1.1"
   },
   "dependencies": {
-    "query-string": "^9.3.1",
-    "react-router-dom": "5.2.0"
+    "query-string": "^9.3.1"
   }
 }
