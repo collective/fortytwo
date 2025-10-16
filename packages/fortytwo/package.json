@@ -27,15 +27,20 @@
     "release-alpha": "release-it --preRelease=alpha"
   },
   "addons": [],
-  "dependencies": {},
   "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
     "@plone/registry": "workspace:*",
-    "@plone/types": "workspace:*"
+    "@plone/types": "workspace:*",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@plone/scripts": "workspace:*",
+    "@types/lodash": "^4.14.201",
+    "@types/node": "^24.7.2",
+    "@types/react": "^18",
     "release-it": "^17.1.1"
+  },
+  "dependencies": {
+    "react-router-dom": "5.2.0"
   }
 }
