@@ -1,18 +1,24 @@
 import config from '@plone/registry';
+import type { GetSlotArgs } from '@plone/types';
 
-const HeaderTools = () => {
+type Props = {
+  content: GetSlotArgs['content'];
+  location: GetSlotArgs['location'];
+};
+
+const HeaderTools = ({ content, location }: Props) => {
   const links = [
     {
       id: '1',
       label: 'edit',
       icon: '🛠️',
-      url: `${config.settings.fortytwo.voltoUrl}${window.location.pathname.replace(/^\/$/, '')}/edit`,
+      url: `${config.settings.fortytwo.voltoUrl}${location.pathname.replace(/^\/$/, '')}/edit`,
     },
     {
       id: '2',
       label: 'contents',
       icon: '🗂️',
-      url: `${config.settings.fortytwo.voltoUrl}${window.location.pathname.replace(/^\/$/, '')}/contents`,
+      url: `${config.settings.fortytwo.voltoUrl}${location.pathname.replace(/^\/$/, '')}/contents`,
     },
   ];
   return (

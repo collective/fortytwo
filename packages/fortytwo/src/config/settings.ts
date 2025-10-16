@@ -4,7 +4,7 @@ import ViewRedirector from '../components/ViewRedirector';
 
 export default function install(config: ConfigType) {
   const RAZZLE_SEVEN_URL =
-    (__CLIENT__ && window?.env?.RAZZLE_SEVEN_URL) ||
+    (typeof window !== 'undefined' && window?.env?.RAZZLE_SEVEN_URL) ||
     process.env.RAZZLE_SEVEN_URL ||
     'http://localhost:3000';
 
@@ -39,8 +39,6 @@ declare global {
       RAZZLE_SEVEN_URL?: string;
     };
   }
-  const __CLIENT__: boolean;
-  const __SERVER__: boolean;
 }
 
 declare module '@plone/types' {
