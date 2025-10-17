@@ -1,1 +1,0 @@
-First implementation as both a Volto add-on and Seven add-on. @pnicolli
