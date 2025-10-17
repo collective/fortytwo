@@ -1,6 +1,6 @@
 {
   "name": "@plone-collective/fortytwo",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Helper for creating Seven-powered sites on top of Plone 6",
   "main": "src/index.ts",
   "license": "MIT",
